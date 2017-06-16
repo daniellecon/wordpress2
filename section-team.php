@@ -1,32 +1,32 @@
 <?php
-$onepress_team_id       = get_theme_mod( 'onepress_team_id', esc_html__('team', 'onepress') );
-$onepress_team_disable  = get_theme_mod( 'onepress_team_disable' ) ==  1 ? true : false;
-$onepress_team_title    = get_theme_mod( 'onepress_team_title', esc_html__('Our Team', 'onepress' ));
-$onepress_team_subtitle = get_theme_mod( 'onepress_team_subtitle', esc_html__('Section subtitle', 'onepress' ));
-$layout = intval( get_theme_mod( 'onepress_team_layout', 3 ) );
+$sovenco_team_id       = get_theme_mod( 'sovenco_team_id', esc_html__('team', 'sovenco') );
+$sovenco_team_disable  = get_theme_mod( 'sovenco_team_disable' ) ==  1 ? true : false;
+$sovenco_team_title    = get_theme_mod( 'sovenco_team_title', esc_html__('Our Team', 'sovenco' ));
+$sovenco_team_subtitle = get_theme_mod( 'sovenco_team_subtitle', esc_html__('Section subtitle', 'sovenco' ));
+$layout = intval( get_theme_mod( 'sovenco_team_layout', 3 ) );
 if ( $layout <= 0 ){
     $layout = 3;
 }
-$user_ids = onepress_get_section_team_data();
-if ( onepress_is_selective_refresh() ) {
-    $onepress_team_disable = false;
+$user_ids = sovenco_get_section_team_data();
+if ( sovenco_is_selective_refresh() ) {
+    $sovenco_team_disable = false;
 }
 if ( ! empty( $user_ids ) ) {
-    $desc = get_theme_mod( 'onepress_team_desc' );
+    $desc = get_theme_mod( 'sovenco_team_desc' );
     ?>
-    <?php if ( ! $onepress_team_disable ) : ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
-        <section id="<?php if ($onepress_team_id != '') echo $onepress_team_id; ?>" <?php do_action('onepress_section_atts', 'team'); ?>
-                 class="<?php echo esc_attr(apply_filters('onepress_section_class', 'section-team section-padding section-meta onepage-section', 'team')); ?>">
+    <?php if ( ! $sovenco_team_disable ) : ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
+        <section id="<?php if ($sovenco_team_id != '') echo $sovenco_team_id; ?>" <?php do_action('sovenco_section_atts', 'team'); ?>
+                 class="<?php echo esc_attr(apply_filters('sovenco_section_class', 'section-team section-padding section-meta onepage-section', 'team')); ?>">
         <?php } ?>
-            <?php do_action('onepress_section_before_inner', 'team'); ?>
+            <?php do_action('sovenco_section_before_inner', 'team'); ?>
             <div class="container">
-                <?php if ( $onepress_team_title || $onepress_team_subtitle || $desc ){ ?>
+                <?php if ( $sovenco_team_title || $sovenco_team_subtitle || $desc ){ ?>
                 <div class="section-title-area">
-                    <?php if ($onepress_team_subtitle != '') echo '<h5 class="section-subtitle">' . esc_html($onepress_team_subtitle) . '</h5>'; ?>
-                    <?php if ($onepress_team_title != '') echo '<h2 class="section-title">' . esc_html($onepress_team_title) . '</h2>'; ?>
+                    <?php if ($sovenco_team_subtitle != '') echo '<h5 class="section-subtitle">' . esc_html($sovenco_team_subtitle) . '</h5>'; ?>
+                    <?php if ($sovenco_team_title != '') echo '<h2 class="section-title">' . esc_html($sovenco_team_title) . '</h2>'; ?>
                     <?php if ( $desc ) {
-                        echo '<div class="section-desc">' . apply_filters( 'onepress_the_content', wp_kses_post( $desc ) ) . '</div>';
+                        echo '<div class="section-desc">' . apply_filters( 'sovenco_the_content', wp_kses_post( $desc ) ) . '</div>';
                     } ?>
                 </div>
                 <?php } ?>
@@ -45,7 +45,7 @@ if ( ! empty( $user_ids ) ) {
                                 'id' => '',
                              ) );
 
-                            $image_attributes = wp_get_attachment_image_src( $user_id['id'], 'onepress-small' );
+                            $image_attributes = wp_get_attachment_image_src( $user_id['id'], 'sovenco-small' );
                             $image_alt = get_post_meta( $user_id['id'], '_wp_attachment_image_alt', true);
 
                             if ( $image_attributes ) {
@@ -62,7 +62,7 @@ if ( ! empty( $user_ids ) ) {
                                         <?php if ( $link ) { ?>
                                             </a>
                                         <?php } ?>
-                                        <?php do_action( 'onepress_section_team_member_media', $member ); ?>
+                                        <?php do_action( 'sovenco_section_team_member_media', $member ); ?>
                                     </div>
                                     <div class="member-info">
                                         <h5 class="member-name"><?php if ( $link ) { ?><a href="<?php echo esc_url( $link ); ?>"><?php } ?><?php echo esc_html( $data->post_title ); ?><?php if ( $link ) { ?></a><?php } ?></h5>
@@ -78,8 +78,8 @@ if ( ! empty( $user_ids ) ) {
                     ?>
                 </div>
             </div>
-            <?php do_action('onepress_section_after_inner', 'team'); ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
+            <?php do_action('sovenco_section_after_inner', 'team'); ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
         </section>
         <?php } ?>
     <?php endif;
