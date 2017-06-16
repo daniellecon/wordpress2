@@ -12,7 +12,7 @@ get_header(); ?>
 
 		<div class="page-header">
 			<div class="container">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'onepress' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'sovenco' ); ?></h1>
 			</div>
 		</div>
 
