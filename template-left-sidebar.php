@@ -2,7 +2,7 @@
 /**
  *Template Name: Left Sidebar
  *
- * @package OnePress
+ * @package sovenco
  */
 
 get_header(); ?>
@@ -15,7 +15,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-        <?php echo onepress_breadcrumb(); ?>
+        <?php echo sovenco_breadcrumb(); ?>
 
 		<div id="content-inside" class="container left-sidebar">
 			<div id="primary" class="content-area">
