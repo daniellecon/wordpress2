@@ -8,7 +8,7 @@
  * @param $template_names
  * @return string
  */
-function onepress_customizer_load_template( $template_names ){
+function sovenco_customizer_load_template( $template_names ){
     $located = '';
 
     $is_child =  get_stylesheet_directory() != get_template_directory() ;
@@ -20,8 +20,8 @@ function onepress_customizer_load_template( $template_names ){
             $located = get_stylesheet_directory() . '/' . $template_name;
             break;
 
-        } elseif ( defined( 'ONEPRESS_PLUS_PATH' ) && file_exists( ONEPRESS_PLUS_PATH  . $template_name ) ) { // Check part in the plugin
-            $located = ONEPRESS_PLUS_PATH . $template_name;
+        } elseif ( defined( 'sovenco_PLUS_PATH' ) && file_exists( sovenco_PLUS_PATH  . $template_name ) ) { // Check part in the plugin
+            $located = sovenco_PLUS_PATH . $template_name;
             break;
         } elseif ( file_exists( get_template_directory() . '/' . $template_name) ) { // current_theme
             $located =  get_template_directory() . '/' . $template_name;
@@ -40,10 +40,10 @@ function onepress_customizer_load_template( $template_names ){
  * @param array $section
  * @return string
  */
-function onepress_get_customizer_section_content( $section_tpl, $section = array() ){
+function sovenco_get_customizer_section_content( $section_tpl, $section = array() ){
     ob_start();
-    $GLOBALS['onepress_is_selective_refresh'] = true;
-    $file = onepress_customizer_load_template( $section_tpl );
+    $GLOBALS['sovenco_is_selective_refresh'] = true;
+    $file = sovenco_customizer_load_template( $section_tpl );
     if ( $file ) {
         include $file;
     }
@@ -59,7 +59,7 @@ function onepress_get_customizer_section_content( $section_tpl, $section = array
  *
  * @param $wp_customize
  */
-function onepress_customizer_partials( $wp_customize ) {
+function sovenco_customizer_partials( $wp_customize ) {
 
     // Abort if selective refresh is not available.
     if ( ! isset( $wp_customize->selective_refresh ) ) {
@@ -72,11 +72,11 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'features',
             'selector' => '.section-features',
             'settings' => array(
-                'onepress_features_boxes',
-                'onepress_features_title',
-                'onepress_features_subtitle',
-                'onepress_features_desc',
-                'onepress_features_layout',
+                'sovenco_features_boxes',
+                'sovenco_features_title',
+                'sovenco_features_subtitle',
+                'sovenco_features_desc',
+                'sovenco_features_layout',
             ),
         ),
 
@@ -85,11 +85,11 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'services',
             'selector' => '.section-services',
             'settings' => array(
-                'onepress_services',
-                'onepress_services_title',
-                'onepress_services_subtitle',
-                'onepress_services_desc',
-                'onepress_service_layout',
+                'sovenco_services',
+                'sovenco_services_title',
+                'sovenco_services_subtitle',
+                'sovenco_services_desc',
+                'sovenco_service_layout',
             ),
         ),
 
@@ -98,19 +98,19 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'gallery',
             'selector' => '.section-gallery',
             'settings' => array(
-                'onepress_gallery_source',
+                'sovenco_gallery_source',
 
-                'onepress_gallery_title',
-                'onepress_gallery_subtitle',
-                'onepress_gallery_desc',
-                'onepress_gallery_source_page',
-                'onepress_gallery_layout',
-                'onepress_gallery_display',
-                'onepress_g_number',
-                'onepress_g_row_height',
-                'onepress_g_col',
-                'onepress_g_readmore_link',
-                'onepress_g_readmore_text',
+                'sovenco_gallery_title',
+                'sovenco_gallery_subtitle',
+                'sovenco_gallery_desc',
+                'sovenco_gallery_source_page',
+                'sovenco_gallery_layout',
+                'sovenco_gallery_display',
+                'sovenco_g_number',
+                'sovenco_g_row_height',
+                'sovenco_g_col',
+                'sovenco_g_readmore_link',
+                'sovenco_g_readmore_text',
             ),
         ),
 
@@ -119,12 +119,12 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'news',
             'selector' => '.section-news',
             'settings' => array(
-                'onepress_news_title',
-                'onepress_news_subtitle',
-                'onepress_news_desc',
-                'onepress_news_number',
-                'onepress_news_more_link',
-                'onepress_news_more_text',
+                'sovenco_news_title',
+                'sovenco_news_subtitle',
+                'sovenco_news_desc',
+                'sovenco_news_number',
+                'sovenco_news_more_link',
+                'sovenco_news_more_text',
             ),
         ),
 
@@ -133,17 +133,17 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'contact',
             'selector' => '.section-contact',
             'settings' => array(
-                'onepress_contact_title',
-                'onepress_contact_subtitle',
-                'onepress_contact_desc',
-                'onepress_contact_cf7',
-                'onepress_contact_cf7_disable',
-                'onepress_contact_text',
-                'onepress_contact_address_title',
-                'onepress_contact_address',
-                'onepress_contact_phone',
-                'onepress_contact_email',
-                'onepress_contact_fax',
+                'sovenco_contact_title',
+                'sovenco_contact_subtitle',
+                'sovenco_contact_desc',
+                'sovenco_contact_cf7',
+                'sovenco_contact_cf7_disable',
+                'sovenco_contact_text',
+                'sovenco_contact_address_title',
+                'sovenco_contact_address',
+                'sovenco_contact_phone',
+                'sovenco_contact_email',
+                'sovenco_contact_fax',
             ),
         ),
 
@@ -152,10 +152,10 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'counter',
             'selector' => '.section-counter',
             'settings' => array(
-                'onepress_counter_boxes',
-                'onepress_counter_title',
-                'onepress_counter_subtitle',
-                'onepress_counter_desc',
+                'sovenco_counter_boxes',
+                'sovenco_counter_title',
+                'sovenco_counter_subtitle',
+                'sovenco_counter_desc',
             ),
         ),
         // section videolightbox
@@ -163,8 +163,8 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'videolightbox',
             'selector' => '.section-videolightbox',
             'settings' => array(
-                'onepress_videolightbox_title',
-                'onepress_videolightbox_url',
+                'sovenco_videolightbox_title',
+                'sovenco_videolightbox_url',
             ),
         ),
 
@@ -173,11 +173,11 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'about',
             'selector' => '.section-about',
             'settings' => array(
-                'onepress_about_boxes',
-                'onepress_about_title',
-                'onepress_about_subtitle',
-                'onepress_about_desc',
-                'onepress_about_content_source',
+                'sovenco_about_boxes',
+                'sovenco_about_title',
+                'sovenco_about_subtitle',
+                'sovenco_about_desc',
+                'sovenco_about_content_source',
             ),
         ),
 
@@ -186,16 +186,16 @@ function onepress_customizer_partials( $wp_customize ) {
             'id' => 'team',
             'selector' => '.section-team',
             'settings' => array(
-                'onepress_team_members',
-                'onepress_team_title',
-                'onepress_team_subtitle',
-                'onepress_team_desc',
-                'onepress_team_layout',
+                'sovenco_team_members',
+                'sovenco_team_title',
+                'sovenco_team_subtitle',
+                'sovenco_team_desc',
+                'sovenco_team_layout',
             ),
         ),
     );
 
-    $selective_refresh_keys = apply_filters( 'onepress_customizer_partials_selective_refresh_keys', $selective_refresh_keys );
+    $selective_refresh_keys = apply_filters( 'sovenco_customizer_partials_selective_refresh_keys', $selective_refresh_keys );
 
     foreach ( $selective_refresh_keys as $section ) {
         foreach ( $section['settings'] as $key ) {
@@ -207,42 +207,42 @@ function onepress_customizer_partials( $wp_customize ) {
         $wp_customize->selective_refresh->add_partial( 'section-'.$section['id'] , array(
             'selector' => $section['selector'],
             'settings' => $section['settings'],
-            'render_callback' => 'onepress_selective_refresh_render_section_content',
+            'render_callback' => 'sovenco_selective_refresh_render_section_content',
         ));
     }
 
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'onepress_hide_sitetitle' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'onepress_hide_tagline' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'sovenco_hide_sitetitle' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'sovenco_hide_tagline' )->transport = 'postMessage';
     $wp_customize->selective_refresh->add_partial( 'header_brand', array(
         'selector' => '.site-header .site-branding',
-        'settings' => array( 'blogname', 'blogdescription', 'onepress_hide_sitetitle', 'onepress_hide_tagline' ),
-        'render_callback' => 'onepress_site_logo',
+        'settings' => array( 'blogname', 'blogdescription', 'sovenco_hide_sitetitle', 'sovenco_hide_tagline' ),
+        'render_callback' => 'sovenco_site_logo',
     ) );
 
     // Footer social heading
-    $wp_customize->selective_refresh->add_partial( 'onepress_social_footer_title', array(
+    $wp_customize->selective_refresh->add_partial( 'sovenco_social_footer_title', array(
         'selector' => '.footer-social .follow-heading',
-        'settings' => array( 'onepress_social_footer_title' ),
-        'render_callback' => 'onepress_selective_refresh_social_footer_title',
+        'settings' => array( 'sovenco_social_footer_title' ),
+        'render_callback' => 'sovenco_selective_refresh_social_footer_title',
     ) );
     // Footer social icons
-    $wp_customize->selective_refresh->add_partial( 'onepress_social_profiles', array(
+    $wp_customize->selective_refresh->add_partial( 'sovenco_social_profiles', array(
         'selector' => '.footer-social .footer-social-icons',
-        'settings' => array( 'onepress_social_profiles' ),
-        'render_callback' =>  'onepress_get_social_profiles',
+        'settings' => array( 'sovenco_social_profiles' ),
+        'render_callback' =>  'sovenco_get_social_profiles',
     ) );
 
     // Footer New letter heading
-    $wp_customize->selective_refresh->add_partial( 'onepress_newsletter_title', array(
+    $wp_customize->selective_refresh->add_partial( 'sovenco_newsletter_title', array(
         'selector' => '.footer-subscribe .follow-heading',
-        'settings' => array( 'onepress_newsletter_title' ),
-        'render_callback' => 'onepress_selective_refresh_newsletter_title',
+        'settings' => array( 'sovenco_newsletter_title' ),
+        'render_callback' => 'sovenco_selective_refresh_newsletter_title',
     ) );
 
 }
-add_action( 'customize_register', 'onepress_customizer_partials', 50 );
+add_action( 'customize_register', 'sovenco_customizer_partials', 50 );
 
 
 
@@ -252,19 +252,19 @@ add_action( 'customize_register', 'onepress_customizer_partials', 50 );
  * @param $partial
  * @param array $container_context
  */
-function onepress_selective_refresh_render_section_content( $partial, $container_context = array() ) {
+function sovenco_selective_refresh_render_section_content( $partial, $container_context = array() ) {
     $tpl = 'section-parts/'.$partial->id.'.php';
-    $GLOBALS['onepress_is_selective_refresh'] = true;
-    $file = onepress_customizer_load_template( $tpl );
+    $GLOBALS['sovenco_is_selective_refresh'] = true;
+    $file = sovenco_customizer_load_template( $tpl );
     if ( $file ) {
         include $file;
     }
 }
 
-function onepress_selective_refresh_social_footer_title(){
-    return get_theme_mod( 'onepress_social_footer_title' );
+function sovenco_selective_refresh_social_footer_title(){
+    return get_theme_mod( 'sovenco_social_footer_title' );
 }
 
-function onepress_selective_refresh_newsletter_title(){
-    return get_theme_mod( 'onepress_newsletter_title' );
+function sovenco_selective_refresh_newsletter_title(){
+    return get_theme_mod( 'sovenco_newsletter_title' );
 }
