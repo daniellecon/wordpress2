@@ -4,16 +4,16 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package OnePress
+ * @package sovenco
  */
 
 get_header();
-$layout = onepress_get_layout();
+$layout = sovenco_get_layout();
 ?>
 
 	<div id="content" class="site-content">
 
-		<?php echo onepress_breadcrumb(); ?>
+		<?php echo sovenco_breadcrumb(); ?>
 
 		<div id="content-inside" class="container <?php echo esc_attr( $layout ); ?>">
 			<div id="primary" class="content-area">
