@@ -1,12 +1,12 @@
 <?php
 /**
- * The header for the OnePress theme.
+ * The header for the sovenco theme.
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package OnePress
+ * @package sovenco
  */
 
 ?><!DOCTYPE html>
@@ -20,14 +20,14 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php do_action( 'onepress_before_site_start' ); ?>
+<?php do_action( 'sovenco_before_site_start' ); ?>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'onepress' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sovenco' ); ?></a>
     <?php
     /**
-     * Hooked: onepress_site_header
+     * Hooked: sovenco_site_header
      *
-     * @see onepress_site_header
+     * @see sovenco_site_header
      */
-    do_action( 'onepress_site_start' );
+    do_action( 'sovenco_site_start' );
     ?>
