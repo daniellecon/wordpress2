@@ -2,13 +2,13 @@
 /**
  * The template for displaying all pages WooCommerce page.
  *
- * @package OnePress
+ * @package sovenco
  */
 
 get_header();
 
 $is_active_sidebar = is_active_sidebar( 'sidebar-shop' );
-$layout = onepress_get_layout();
+$layout = sovenco_get_layout();
 ?>
 
 	<div id="content" class="site-content">
@@ -19,7 +19,7 @@ $layout = onepress_get_layout();
 			</div>
 		</div>
 
-		<?php echo onepress_breadcrumb(); ?>
+		<?php echo sovenco_breadcrumb(); ?>
 
 		<div id="content-inside" class="container <?php echo ( $is_active_sidebar ) ? esc_attr( $layout ) : 'no-sidebar'; ?>">
 			<div id="primary" class="content-area">
