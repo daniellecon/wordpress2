@@ -1,10 +1,10 @@
-=== OnePress ===
+=== sovenco ===
 
-OnePress Theme, Copyright 2017 FameThemes
-OnePress is distributed under the terms of the GNU GPL
+sovenco Theme, Copyright 2017 sovenco
+sovenco is distributed under the terms of the GNU GPL
 
 == Description ==
-OnePress is an outstanding creative and flexible WordPress one page theme well suited for business, portfolio, digital agency, product showcase, freelancers and everyone else who appreciate good design.
+sovenco is an outstanding creative and flexible WordPress one page theme well suited for business, portfolio, digital agency, product showcase, freelancers and everyone else who appreciate good design.
 
 == Installation ==
 
