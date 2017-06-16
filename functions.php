@@ -1,13 +1,13 @@
 <?php
 /**
- * OnePress functions and definitions.
+ * sovenco functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package OnePress
+ * @package sovenco
  */
 
-if ( ! function_exists( 'onepress_setup' ) ) :
+if ( ! function_exists( 'sovenco_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'onepress_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function onepress_setup() {
+	function sovenco_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on OnePress, use a find and replace
-		 * to change 'onepress' to the name of your theme in all the template files.
+		 * If you're building a theme based on sovenco, use a find and replace
+		 * to change 'sovenco' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'onepress', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'sovenco', get_template_directory() . '/languages' );
 
 		/*
 		 * Add default posts and comments RSS feed links to head.
@@ -48,15 +48,15 @@ if ( ! function_exists( 'onepress_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'onepress-blog-small', 300, 150, true );
-		add_image_size( 'onepress-small', 480, 300, true );
-		add_image_size( 'onepress-medium', 640, 400, true );
+		add_image_size( 'sovenco-blog-small', 300, 150, true );
+		add_image_size( 'sovenco-small', 480, 300, true );
+		add_image_size( 'sovenco-medium', 640, 400, true );
 
 		/*
 		 * This theme uses wp_nav_menu() in one location.
 		 */
 		register_nav_menus( array(
-			'primary'      => esc_html__( 'Primary Menu', 'onepress' ),
+			'primary'      => esc_html__( 'Primary Menu', 'sovenco' ),
 		) );
 
 		/*
@@ -74,7 +74,7 @@ if ( ! function_exists( 'onepress_setup' ) ) :
 		/*
 		 * This theme styles the visual editor to resemble the theme style.
 		 */
-		add_editor_style( array( 'assets/css/editor-style.css', onepress_fonts_url() ) );
+		add_editor_style( array( 'assets/css/editor-style.css', sovenco_fonts_url() ) );
 
 		/*
 		 * WooCommerce support.
@@ -98,11 +98,11 @@ if ( ! function_exists( 'onepress_setup' ) ) :
         // Recommend plugins
         add_theme_support( 'recommend-plugins', array(
             'contact-form-7' => array(
-                'name' => esc_html__( 'Contact Form 7', 'onepress' ),
+                'name' => esc_html__( 'Contact Form 7', 'sovenco' ),
                 'active_filename' => 'contact-form-7/wp-contact-form-7.php',
             ),
             'famethemes-demo-importer' => array(
-                'name' => esc_html__( 'Famethemes Demo Importer', 'onepress' ),
+                'name' => esc_html__( 'Famethemes Demo Importer', 'sovenco' ),
                 'active_filename' => 'famethemes-demo-importer/famethemes-demo-importer.php',
             ),
         ) );
@@ -118,7 +118,7 @@ if ( ! function_exists( 'onepress_setup' ) ) :
 
 	}
 endif;
-add_action( 'after_setup_theme', 'onepress_setup' );
+add_action( 'after_setup_theme', 'sovenco_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -127,19 +127,19 @@ add_action( 'after_setup_theme', 'onepress_setup' );
  *
  * @global int $content_width
  */
-function onepress_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'onepress_content_width', 800 );
+function sovenco_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'sovenco_content_width', 800 );
 }
-add_action( 'after_setup_theme', 'onepress_content_width', 0 );
+add_action( 'after_setup_theme', 'sovenco_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function onepress_widgets_init() {
+function sovenco_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'onepress' ),
+		'name'          => esc_html__( 'Sidebar', 'sovenco' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -150,7 +150,7 @@ function onepress_widgets_init() {
 
     if ( class_exists( 'WooCommerce' ) ) {
         register_sidebar( array(
-            'name'          => esc_html__( 'WooCommerce Sidebar', 'onepress' ),
+            'name'          => esc_html__( 'WooCommerce Sidebar', 'sovenco' ),
             'id'            => 'sidebar-shop',
             'description'   => '',
             'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -161,40 +161,40 @@ function onepress_widgets_init() {
     }
 
 }
-add_action( 'widgets_init', 'onepress_widgets_init' );
+add_action( 'widgets_init', 'sovenco_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function onepress_scripts() {
+function sovenco_scripts() {
 
-    $theme = wp_get_theme( 'onepress' );
+    $theme = wp_get_theme( 'sovenco' );
     $version = $theme->get( 'Version' );
 
-	wp_enqueue_style( 'onepress-fonts', onepress_fonts_url(), array(), $version );
-	wp_enqueue_style( 'onepress-animate', get_template_directory_uri() .'/assets/css/animate.min.css', array(), $version );
-	wp_enqueue_style( 'onepress-fa', get_template_directory_uri() .'/assets/css/font-awesome.min.css', array(), '4.7.0' );
-	wp_enqueue_style( 'onepress-bootstrap', get_template_directory_uri() .'/assets/css/bootstrap.min.css', false, $version );
-	wp_enqueue_style( 'onepress-style', get_template_directory_uri().'/style.css' );
+	wp_enqueue_style( 'sovenco-fonts', sovenco_fonts_url(), array(), $version );
+	wp_enqueue_style( 'sovenco-animate', get_template_directory_uri() .'/assets/css/animate.min.css', array(), $version );
+	wp_enqueue_style( 'sovenco-fa', get_template_directory_uri() .'/assets/css/font-awesome.min.css', array(), '4.7.0' );
+	wp_enqueue_style( 'sovenco-bootstrap', get_template_directory_uri() .'/assets/css/bootstrap.min.css', false, $version );
+	wp_enqueue_style( 'sovenco-style', get_template_directory_uri().'/style.css' );
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'onepress-js-plugins', get_template_directory_uri() . '/assets/js/plugins.js', array( 'jquery' ), $version, true );
-	wp_enqueue_script( 'onepress-js-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), $version, true );
+	wp_enqueue_script( 'sovenco-js-plugins', get_template_directory_uri() . '/assets/js/plugins.js', array( 'jquery' ), $version, true );
+	wp_enqueue_script( 'sovenco-js-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), $version, true );
 
     // Animation from settings.
-    $onepress_js_settings = array(
-        'onepress_disable_animation'     => get_theme_mod( 'onepress_animation_disable' ),
-        'onepress_disable_sticky_header' => get_theme_mod( 'onepress_sticky_header_disable' ),
-        'onepress_vertical_align_menu'   => get_theme_mod( 'onepress_vertical_align_menu' ),
-        'hero_animation'   				 => get_theme_mod( 'onepress_hero_option_animation', 'flipInX' ),
-        'hero_speed'   					 => intval( get_theme_mod( 'onepress_hero_option_speed', 5000 ) ),
-        'hero_fade'   					 => intval( get_theme_mod( 'onepress_hero_slider_fade', 750 ) ),
-        'hero_duration'   				 => intval( get_theme_mod( 'onepress_hero_slider_duration', 5000 ) ),
+    $sovenco_js_settings = array(
+        'sovenco_disable_animation'     => get_theme_mod( 'sovenco_animation_disable' ),
+        'sovenco_disable_sticky_header' => get_theme_mod( 'sovenco_sticky_header_disable' ),
+        'sovenco_vertical_align_menu'   => get_theme_mod( 'sovenco_vertical_align_menu' ),
+        'hero_animation'   				 => get_theme_mod( 'sovenco_hero_option_animation', 'flipInX' ),
+        'hero_speed'   					 => intval( get_theme_mod( 'sovenco_hero_option_speed', 5000 ) ),
+        'hero_fade'   					 => intval( get_theme_mod( 'sovenco_hero_slider_fade', 750 ) ),
+        'hero_duration'   				 => intval( get_theme_mod( 'sovenco_hero_slider_duration', 5000 ) ),
         'is_home'   					 => '',
         'gallery_enable'   				 => '',
     );
     // Load gallery scripts
-    $galley_disable  = get_theme_mod( 'onepress_gallery_disable' ) ==  1 ? true : false;
+    $galley_disable  = get_theme_mod( 'sovenco_gallery_disable' ) ==  1 ? true : false;
     $is_shop = false;
     if ( function_exists( 'is_woocommerce' ) ) {
         if ( is_woocommerce() ) {
@@ -205,67 +205,67 @@ function onepress_scripts() {
     // Don't load scripts for woocommerce because it don't need.
     if ( ! $is_shop ) {
         if ( ! $galley_disable || is_customize_preview()) {
-            $onepress_js_settings['gallery_enable'] = 1;
-            $display = get_theme_mod('onepress_gallery_display', 'grid');
+            $sovenco_js_settings['gallery_enable'] = 1;
+            $display = get_theme_mod('sovenco_gallery_display', 'grid');
             if (!is_customize_preview()) {
                 switch ($display) {
                     case 'masonry':
-                        wp_enqueue_script('onepress-gallery-masonry', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), $version, true);
+                        wp_enqueue_script('sovenco-gallery-masonry', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), $version, true);
                         break;
                     case 'justified':
-                        wp_enqueue_script('onepress-gallery-justified', get_template_directory_uri() . '/assets/js/jquery.justifiedGallery.min.js', array(), $version, true);
+                        wp_enqueue_script('sovenco-gallery-justified', get_template_directory_uri() . '/assets/js/jquery.justifiedGallery.min.js', array(), $version, true);
                         break;
                     case 'slider':
                     case 'carousel':
-                        wp_enqueue_script('onepress-gallery-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), $version, true);
+                        wp_enqueue_script('sovenco-gallery-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), $version, true);
                         break;
                     default:
                         break;
                 }
             } else {
-                wp_enqueue_script('onepress-gallery-masonry', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), $version, true);
-                wp_enqueue_script('onepress-gallery-justified', get_template_directory_uri() . '/assets/js/jquery.justifiedGallery.min.js', array(), $version, true);
-                wp_enqueue_script('onepress-gallery-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), $version, true);
+                wp_enqueue_script('sovenco-gallery-masonry', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), $version, true);
+                wp_enqueue_script('sovenco-gallery-justified', get_template_directory_uri() . '/assets/js/jquery.justifiedGallery.min.js', array(), $version, true);
+                wp_enqueue_script('sovenco-gallery-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), $version, true);
             }
 
         }
-        wp_enqueue_style('onepress-gallery-lightgallery', get_template_directory_uri() . '/assets/css/lightgallery.css');
+        wp_enqueue_style('sovenco-gallery-lightgallery', get_template_directory_uri() . '/assets/css/lightgallery.css');
     }
 
-	wp_enqueue_script( 'onepress-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), $version, true );
+	wp_enqueue_script( 'sovenco-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), $version, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
     if ( is_front_page() && is_page_template( 'template-frontpage.php' ) ) {
-        if ( get_theme_mod( 'onepress_header_scroll_logo' ) ) {
-            $onepress_js_settings['is_home'] = 1;
+        if ( get_theme_mod( 'sovenco_header_scroll_logo' ) ) {
+            $sovenco_js_settings['is_home'] = 1;
         }
     }
-	wp_localize_script( 'jquery', 'onepress_js_settings', $onepress_js_settings );
+	wp_localize_script( 'jquery', 'sovenco_js_settings', $sovenco_js_settings );
 
 }
-add_action( 'wp_enqueue_scripts', 'onepress_scripts' );
+add_action( 'wp_enqueue_scripts', 'sovenco_scripts' );
 
 
-if ( ! function_exists( 'onepress_fonts_url' ) ) :
+if ( ! function_exists( 'sovenco_fonts_url' ) ) :
 	/**
 	 * Register default Google fonts
 	 */
-	function onepress_fonts_url() {
+	function sovenco_fonts_url() {
 	    $fonts_url = '';
 
 	 	/* Translators: If there are characters in your language that are not
 	    * supported by Open Sans, translate this to 'off'. Do not translate
 	    * into your own language.
 	    */
-	    $open_sans = _x( 'on', 'Open Sans font: on or off', 'onepress' );
+	    $open_sans = _x( 'on', 'Open Sans font: on or off', 'sovenco' );
 
 	    /* Translators: If there are characters in your language that are not
 	    * supported by Raleway, translate this to 'off'. Do not translate
 	    * into your own language.
 	    */
-	    $raleway = _x( 'on', 'Raleway font: on or off', 'onepress' );
+	    $raleway = _x( 'on', 'Raleway font: on or off', 'sovenco' );
 
 	    if ( 'off' !== $raleway || 'off' !== $open_sans ) {
 	        $font_families = array();
@@ -291,7 +291,7 @@ if ( ! function_exists( 'onepress_fonts_url' ) ) :
 endif;
 
 
-if ( ! function_exists( 'onepress_register_required_plugins' ) ) :
+if ( ! function_exists( 'sovenco_register_required_plugins' ) ) :
 	/**
 	 * Register the required plugins for this theme.
 	 *
@@ -306,7 +306,7 @@ if ( ! function_exists( 'onepress_register_required_plugins' ) ) :
 	 * This function is hooked into tgmpa_init, which is fired within the
 	 * TGM_Plugin_Activation class constructor.
 	 */
-	function onepress_register_required_plugins() {
+	function sovenco_register_required_plugins() {
 		/*
 		 * Array of plugin arrays. Required keys are name and slug.
 		 * If the source is NOT from the .org repo, then source is also required.
@@ -346,29 +346,29 @@ if ( ! function_exists( 'onepress_register_required_plugins' ) ) :
 			'message'      => '',                      // Message to output right before the plugins table.
 
 			'strings'      => array(
-				'page_title'                      => esc_html__( 'Install Required Plugins', 'onepress' ),
-				'menu_title'                      => esc_html__( 'Install Plugins', 'onepress' ),
-				'installing'                      => esc_html__( 'Installing Plugin: %s', 'onepress' ), // %s = plugin name.
-				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'onepress' ),
-				'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %1$s plugin.', 'Sorry, but you do not have the correct permissions to install the %1$s plugins.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_ask_to_update_maybe'      => _n_noop( 'There is an update available for: %1$s.', 'There are updates available for the following plugins: %1$s.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %1$s plugin.', 'Sorry, but you do not have the correct permissions to update the %1$s plugins.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'onepress' ), // %1$s = plugin name(s).
-				'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %1$s plugin.', 'Sorry, but you do not have the correct permissions to activate the %1$s plugins.', 'onepress' ), // %1$s = plugin name(s).
-				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'onepress' ),
-				'update_link' 					  => _n_noop( 'Begin updating plugin', 'Begin updating plugins', 'onepress' ),
-				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'onepress' ),
-				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'onepress' ),
-				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'onepress' ),
-				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', 'onepress' ),
-				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'onepress' ),  // %1$s = plugin name(s).
-				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'onepress' ),  // %1$s = plugin name(s).
-				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'onepress' ), // %s = dashboard link.
-				'contact_admin'                   => esc_html__( 'Please contact the administrator of this site for help.', 'onepress' ),
+				'page_title'                      => esc_html__( 'Install Required Plugins', 'sovenco' ),
+				'menu_title'                      => esc_html__( 'Install Plugins', 'sovenco' ),
+				'installing'                      => esc_html__( 'Installing Plugin: %s', 'sovenco' ), // %s = plugin name.
+				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'sovenco' ),
+				'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %1$s plugin.', 'Sorry, but you do not have the correct permissions to install the %1$s plugins.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_ask_to_update_maybe'      => _n_noop( 'There is an update available for: %1$s.', 'There are updates available for the following plugins: %1$s.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %1$s plugin.', 'Sorry, but you do not have the correct permissions to update the %1$s plugins.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'sovenco' ), // %1$s = plugin name(s).
+				'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %1$s plugin.', 'Sorry, but you do not have the correct permissions to activate the %1$s plugins.', 'sovenco' ), // %1$s = plugin name(s).
+				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'sovenco' ),
+				'update_link' 					  => _n_noop( 'Begin updating plugin', 'Begin updating plugins', 'sovenco' ),
+				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'sovenco' ),
+				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'sovenco' ),
+				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'sovenco' ),
+				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', 'sovenco' ),
+				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'sovenco' ),  // %1$s = plugin name(s).
+				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'sovenco' ),  // %1$s = plugin name(s).
+				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'sovenco' ), // %s = dashboard link.
+				'contact_admin'                   => esc_html__( 'Please contact the administrator of this site for help.', 'sovenco' ),
 				'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			),
 
@@ -378,7 +378,7 @@ if ( ! function_exists( 'onepress_register_required_plugins' ) ) :
 	}
 
 endif;
-add_action( 'tgmpa_register', 'onepress_register_required_plugins' );
+add_action( 'tgmpa_register', 'sovenco_register_required_plugins' );
 
 /**
  * Custom template tags for this theme.
