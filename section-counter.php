@@ -1,30 +1,30 @@
 <?php
-$onepress_counter_id       = get_theme_mod( 'onepress_counter_id', esc_html__('counter', 'onepress') );
-$onepress_counter_disable  = get_theme_mod( 'onepress_counter_disable' ) == 1 ? true : false;
-$onepress_counter_title    = get_theme_mod( 'onepress_counter_title', esc_html__('Our Numbers', 'onepress' ));
-$onepress_counter_subtitle = get_theme_mod( 'onepress_counter_subtitle', esc_html__('Section subtitle', 'onepress' ));
-if ( onepress_is_selective_refresh() ) {
-    $onepress_counter_disable = false;
+$sovenco_counter_id       = get_theme_mod( 'sovenco_counter_id', esc_html__('counter', 'sovenco') );
+$sovenco_counter_disable  = get_theme_mod( 'sovenco_counter_disable' ) == 1 ? true : false;
+$sovenco_counter_title    = get_theme_mod( 'sovenco_counter_title', esc_html__('Our Numbers', 'sovenco' ));
+$sovenco_counter_subtitle = get_theme_mod( 'sovenco_counter_subtitle', esc_html__('Section subtitle', 'sovenco' ));
+if ( sovenco_is_selective_refresh() ) {
+    $sovenco_counter_disable = false;
 }
 
 // Get counter data
-$boxes = onepress_get_section_counter_data();
+$boxes = sovenco_get_section_counter_data();
 if ( ! empty ( $boxes ) ) {
-    $desc = get_theme_mod( 'onepress_counter_desc' );
+    $desc = get_theme_mod( 'sovenco_counter_desc' );
     ?>
-    <?php if ($onepress_counter_disable != '1') : ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
-        <section id="<?php if ($onepress_counter_id != '') echo $onepress_counter_id; ?>" <?php do_action('onepress_section_atts', 'counter'); ?>
-                 class="<?php echo esc_attr(apply_filters('onepress_section_class', 'section-counter section-padding onepage-section', 'counter')); ?>">
+    <?php if ($sovenco_counter_disable != '1') : ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
+        <section id="<?php if ($sovenco_counter_id != '') echo $sovenco_counter_id; ?>" <?php do_action('sovenco_section_atts', 'counter'); ?>
+                 class="<?php echo esc_attr(apply_filters('sovenco_section_class', 'section-counter section-padding onepage-section', 'counter')); ?>">
         <?php } ?>
-            <?php do_action('onepress_section_before_inner', 'counter'); ?>
+            <?php do_action('sovenco_section_before_inner', 'counter'); ?>
             <div class="container">
-                <?php if ( $onepress_counter_title || $onepress_counter_subtitle || $desc ){ ?>
+                <?php if ( $sovenco_counter_title || $sovenco_counter_subtitle || $desc ){ ?>
                 <div class="section-title-area">
-                    <?php if ($onepress_counter_subtitle != '') echo '<h5 class="section-subtitle">' . esc_html($onepress_counter_subtitle) . '</h5>'; ?>
-                    <?php if ($onepress_counter_title != '') echo '<h2 class="section-title">' . esc_html($onepress_counter_title) . '</h2>'; ?>
+                    <?php if ($sovenco_counter_subtitle != '') echo '<h5 class="section-subtitle">' . esc_html($sovenco_counter_subtitle) . '</h5>'; ?>
+                    <?php if ($sovenco_counter_title != '') echo '<h2 class="section-title">' . esc_html($sovenco_counter_title) . '</h2>'; ?>
                     <?php if ( $desc ) {
-                        echo '<div class="section-desc">' . apply_filters( 'onepress_the_content', wp_kses_post( $desc ) ) . '</div>';
+                        echo '<div class="section-desc">' . apply_filters( 'sovenco_the_content', wp_kses_post( $desc ) ) . '</div>';
                     } ?>
                 </div>
                 <?php } ?>
@@ -89,8 +89,8 @@ if ( ! empty ( $boxes ) ) {
                     ?>
                 </div>
             </div>
-            <?php do_action('onepress_section_after_inner', 'counter'); ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
+            <?php do_action('sovenco_section_after_inner', 'counter'); ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
         </section>
         <?php } ?>
     <?php endif;
