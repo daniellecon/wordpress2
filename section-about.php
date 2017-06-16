@@ -1,36 +1,36 @@
 <?php
-$onepress_about_id       = get_theme_mod( 'onepress_about_id', esc_html__('about', 'onepress') );
-$onepress_about_disable  = get_theme_mod( 'onepress_about_disable' ) == 1 ? true : false;
-$onepress_about_title    = get_theme_mod( 'onepress_about_title', esc_html__('About Us', 'onepress' ));
-$onepress_about_subtitle = get_theme_mod( 'onepress_about_subtitle', esc_html__('Section subtitle', 'onepress' ));
-$onepress_about_desc     = get_theme_mod( 'onepress_about_desc');
-if ( onepress_is_selective_refresh() ) {
-    $onepress_about_disable = false;
+$sovenco_about_id       = get_theme_mod( 'sovenco_about_id', esc_html__('about', 'sovenco') );
+$sovenco_about_disable  = get_theme_mod( 'sovenco_about_disable' ) == 1 ? true : false;
+$sovenco_about_title    = get_theme_mod( 'sovenco_about_title', esc_html__('About Us', 'sovenco' ));
+$sovenco_about_subtitle = get_theme_mod( 'sovenco_about_subtitle', esc_html__('Section subtitle', 'sovenco' ));
+$sovenco_about_desc     = get_theme_mod( 'sovenco_about_desc');
+if ( sovenco_is_selective_refresh() ) {
+    $sovenco_about_disable = false;
 }
 // Get data
-$page_ids =  onepress_get_section_about_data();
-$content_source = get_theme_mod( 'onepress_about_content_source' );
+$page_ids =  sovenco_get_section_about_data();
+$content_source = get_theme_mod( 'sovenco_about_content_source' );
 if ( ! empty( $page_ids ) ) {
     ?>
-    <?php if (!$onepress_about_disable) { ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
-        <section id="<?php if ($onepress_about_id != '') {
-            echo $onepress_about_id;
-        }; ?>" <?php do_action('onepress_section_atts', 'about'); ?> class="<?php echo esc_attr(apply_filters('onepress_section_class', 'section-about section-padding onepage-section', 'about')); ?>">
+    <?php if (!$sovenco_about_disable) { ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
+        <section id="<?php if ($sovenco_about_id != '') {
+            echo $sovenco_about_id;
+        }; ?>" <?php do_action('sovenco_section_atts', 'about'); ?> class="<?php echo esc_attr(apply_filters('sovenco_section_class', 'section-about section-padding onepage-section', 'about')); ?>">
         <?php } ?>
 
-            <?php do_action('onepress_section_before_inner', 'about'); ?>
+            <?php do_action('sovenco_section_before_inner', 'about'); ?>
             <div class="container">
-                <?php if ( $onepress_about_title || $onepress_about_subtitle || $onepress_about_desc ){ ?>
+                <?php if ( $sovenco_about_title || $sovenco_about_subtitle || $sovenco_about_desc ){ ?>
                 <div class="section-title-area">
-                    <?php if ($onepress_about_subtitle != '') {
-                        echo '<h5 class="section-subtitle">' . esc_html($onepress_about_subtitle) . '</h5>';
+                    <?php if ($sovenco_about_subtitle != '') {
+                        echo '<h5 class="section-subtitle">' . esc_html($sovenco_about_subtitle) . '</h5>';
                     } ?>
-                    <?php if ($onepress_about_title != '') {
-                        echo '<h2 class="section-title">' . esc_html($onepress_about_title) . '</h2>';
+                    <?php if ($sovenco_about_title != '') {
+                        echo '<h2 class="section-title">' . esc_html($sovenco_about_title) . '</h2>';
                     } ?>
-                    <?php if ($onepress_about_desc != '') {
-                        echo '<div class="section-desc">' . apply_filters( 'onepress_the_content', wp_kses_post( $onepress_about_desc ) ) . '</div>';
+                    <?php if ($sovenco_about_desc != '') {
+                        echo '<div class="section-desc">' . apply_filters( 'sovenco_the_content', wp_kses_post( $sovenco_about_desc ) ) . '</div>';
                     } ?>
                 </div>
                 <?php } ?>
@@ -81,7 +81,7 @@ if ( ! empty( $page_ids ) ) {
                                         if ($settings['enable_link']) {
                                             echo '<a href="' . get_permalink($post) . '">';
                                         }
-                                        the_post_thumbnail('onepress-medium');
+                                        the_post_thumbnail('sovenco-medium');
                                         if ($settings['enable_link']) {
                                             echo '</a>';
                                         }
@@ -118,8 +118,8 @@ if ( ! empty( $page_ids ) ) {
                     ?>
                 </div>
             </div>
-            <?php do_action('onepress_section_after_inner', 'about'); ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
+            <?php do_action('sovenco_section_after_inner', 'about'); ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
         </section>
         <?php } ?>
     <?php }
