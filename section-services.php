@@ -1,28 +1,28 @@
 <?php
-$onepress_service_id       = get_theme_mod( 'onepress_services_id', esc_html__('services', 'onepress') );
-$onepress_service_disable  = get_theme_mod( 'onepress_services_disable' ) == 1 ? true : false;
-$onepress_service_title    = get_theme_mod( 'onepress_services_title', esc_html__('Our Services', 'onepress' ));
-$onepress_service_subtitle = get_theme_mod( 'onepress_services_subtitle', esc_html__('Section subtitle', 'onepress' ));
+$sovenco_service_id       = get_theme_mod( 'sovenco_services_id', esc_html__('services', 'sovenco') );
+$sovenco_service_disable  = get_theme_mod( 'sovenco_services_disable' ) == 1 ? true : false;
+$sovenco_service_title    = get_theme_mod( 'sovenco_services_title', esc_html__('Our Services', 'sovenco' ));
+$sovenco_service_subtitle = get_theme_mod( 'sovenco_services_subtitle', esc_html__('Section subtitle', 'sovenco' ));
 // Get data
-$page_ids =  onepress_get_section_services_data();
-if ( onepress_is_selective_refresh() ) {
-    $onepress_service_disable = false;
+$page_ids =  sovenco_get_section_services_data();
+if ( sovenco_is_selective_refresh() ) {
+    $sovenco_service_disable = false;
 }
 if ( ! empty( $page_ids ) ) {
-    $layout = intval( get_theme_mod( 'onepress_service_layout', 6 ) );
-    $desc = get_theme_mod( 'onepress_services_desc' );
+    $layout = intval( get_theme_mod( 'sovenco_service_layout', 6 ) );
+    $desc = get_theme_mod( 'sovenco_services_desc' );
     ?>
-    <?php if (!$onepress_service_disable) : ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
-        <section id="<?php if ($onepress_service_id != '') echo $onepress_service_id; ?>" <?php do_action('onepress_section_atts', 'services'); ?> class="<?php echo esc_attr(apply_filters('onepress_section_class', 'section-services section-padding section-meta onepage-section', 'services')); ?>"><?php } ?>
-            <?php do_action('onepress_section_before_inner', 'services'); ?>
+    <?php if (!$sovenco_service_disable) : ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
+        <section id="<?php if ($sovenco_service_id != '') echo $sovenco_service_id; ?>" <?php do_action('sovenco_section_atts', 'services'); ?> class="<?php echo esc_attr(apply_filters('sovenco_section_class', 'section-services section-padding section-meta onepage-section', 'services')); ?>"><?php } ?>
+            <?php do_action('sovenco_section_before_inner', 'services'); ?>
             <div class="container">
-                <?php if ( $onepress_service_title ||  $onepress_service_subtitle || $desc ){ ?>
+                <?php if ( $sovenco_service_title ||  $sovenco_service_subtitle || $desc ){ ?>
                 <div class="section-title-area">
-                    <?php if ($onepress_service_subtitle != '') echo '<h5 class="section-subtitle">' . esc_html($onepress_service_subtitle) . '</h5>'; ?>
-                    <?php if ($onepress_service_title != '') echo '<h2 class="section-title">' . esc_html($onepress_service_title) . '</h2>'; ?>
+                    <?php if ($sovenco_service_subtitle != '') echo '<h5 class="section-subtitle">' . esc_html($sovenco_service_subtitle) . '</h5>'; ?>
+                    <?php if ($sovenco_service_title != '') echo '<h2 class="section-title">' . esc_html($sovenco_service_title) . '</h2>'; ?>
                     <?php if ( $desc ) {
-                        echo '<div class="section-desc">' . apply_filters( 'onepress_the_content', wp_kses_post( $desc ) ) . '</div>';
+                        echo '<div class="section-desc">' . apply_filters( 'sovenco_the_content', wp_kses_post( $desc ) ) . '</div>';
                     } ?>
                 </div>
                 <?php } ?>
@@ -57,7 +57,7 @@ if ( ! empty( $page_ids ) ) {
                             $media = '';
 
                             if ( $settings['icon_type'] == 'image' && $settings['image'] ){
-                                $url = onepress_get_media_url( $settings['image'] );
+                                $url = sovenco_get_media_url( $settings['image'] );
                                 if ( $url ) {
                                     $media = '<div class="service-image icon-image"><img src="'.esc_url( $url ).'" alt=""></div>';
                                 }
@@ -95,7 +95,7 @@ if ( ! empty( $page_ids ) ) {
                                     <?php if ( has_post_thumbnail() ) { ?>
                                         <div class="service-thumbnail ">
                                             <?php
-                                            the_post_thumbnail('onepress-medium');
+                                            the_post_thumbnail('sovenco-medium');
                                             ?>
                                         </div>
                                     <?php } ?>
@@ -116,8 +116,8 @@ if ( ! empty( $page_ids ) ) {
                     ?>
                 </div>
             </div>
-            <?php do_action('onepress_section_after_inner', 'services'); ?>
-        <?php if ( ! onepress_is_selective_refresh() ){ ?>
+            <?php do_action('sovenco_section_after_inner', 'services'); ?>
+        <?php if ( ! sovenco_is_selective_refresh() ){ ?>
         </section>
         <?php } ?>
     <?php endif;
