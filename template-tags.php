@@ -970,7 +970,7 @@ if ( ! function_exists( 'sovenco_footer_site_info' ) ) {
         ?>
         <?php printf(esc_html__('Copyright %1$s %2$s %3$s', 'sovenco'), '&copy;', esc_attr(date('Y')), esc_attr(get_bloginfo())); ?>
         <span class="sep"> &ndash; </span>
-        <?php printf(esc_html__('%1$s theme by %2$s', 'sovenco'), '<a href="' . esc_url('https://www.famethemes.com/themes/sovenco', 'sovenco') . '">sovenco</a>', 'FameThemes'); ?>
+        <?php printf(esc_html__('%1$s theme by %2$s', 'sovenco'), '<a href="' . esc_url('https://www.sovenco.com', 'sovenco') . '">sovenco</a>', 'sovenco'); ?>
         <?php
     }
 }
