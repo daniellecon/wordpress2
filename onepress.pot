@@ -87,7 +87,7 @@ msgid "Contact Form 7"
 msgstr ""
 
 #: functions.php:105
-msgid "Famethemes Demo Importer"
+msgid "sovencothemes Demo Importer"
 msgstr ""
 
 #: functions.php:137
@@ -497,7 +497,7 @@ msgid "Hey."
 msgstr ""
 
 #: inc/dashboard.php:538
-msgid "FameThemes Demo Importer"
+msgid "sovencoThemes Demo Importer"
 msgstr ""
 
 #: inc/dashboard.php:558
