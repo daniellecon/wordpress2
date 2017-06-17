@@ -101,9 +101,9 @@ if ( ! function_exists( 'sovenco_setup' ) ) :
                 'name' => esc_html__( 'Contact Form 7', 'sovenco' ),
                 'active_filename' => 'contact-form-7/wp-contact-form-7.php',
             ),
-            'famethemes-demo-importer' => array(
-                'name' => esc_html__( 'Famethemes Demo Importer', 'sovenco' ),
-                'active_filename' => 'famethemes-demo-importer/famethemes-demo-importer.php',
+            'sovencothemes-demo-importer' => array(
+                'name' => esc_html__( 'sovencothemes Demo Importer', 'sovenco' ),
+                'active_filename' => 'sovencothemes-demo-importer/sovencothemes-demo-importer.php',
             ),
         ) );
 
