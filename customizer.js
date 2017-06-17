@@ -487,8 +487,8 @@
             };
 
 
-            if ( ! window._upload_fame ) {
-                window._upload_fame = wp.media({
+            if ( ! window._upload_sovenco ) {
+                window._upload_sovenco = wp.media({
                     title: wp.media.view.l10n.addMedia,
                     multiple: false,
                     //library: {type: 'all' },
@@ -496,18 +496,18 @@
                 });
             }
 
-            window._upload_fame.on('close', function () {
+            window._upload_sovenco.on('close', function () {
                 // get selections and save to hidden input plus other AJAX stuff etc.
-                var selection = window._upload_fame.state().get('selection');
+                var selection = window._upload_sovenco.state().get('selection');
                 // console.log(selection);
             });
 
             window.media_current = {};
             window.media_btn = {};
 
-            window._upload_fame.on('select', function () {
+            window._upload_sovenco.on('select', function () {
                 // Grab our attachment selection and construct a JSON representation of the model.
-                var media_attachment = window._upload_fame.state().get('selection').first().toJSON();
+                var media_attachment = window._upload_sovenco.state().get('selection').first().toJSON();
                 $('.image_id', window.media_current).val(media_attachment.id);
                 var preview, img_url;
                 img_url = media_attachment.url;
@@ -547,7 +547,7 @@
                         e.preventDefault();
                         window.media_current = _item;
                         window.media_btn = $(this);
-                        window._upload_fame.open();
+                        window._upload_sovenco.open();
                     });
                 });
             };
@@ -1265,7 +1265,7 @@ jQuery( window ).ready( function( $ ){
             $('.control-section-themes h3.accordion-section-title').append('<a class="theme-action-count" href="' + sovenco_customizer_settings.action_url + '">' + sovenco_customizer_settings.number_action + '</a>');
         }
         if ( sovenco_customizer_settings.is_plus_activated !== 'y' ) {
-            $('#customize-info .accordion-section-title').append('<a target="_blank" style="text-transform: uppercase; background: #D54E21; color: #fff; font-size: 10px; line-height: 14px; padding: 2px 5px; display: inline-block;" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">Upgrade to sovenco plus</a>');
+            $('#customize-info .accordion-section-title').append('<a target="_blank" style="text-transform: uppercase; background: #D54E21; color: #fff; font-size: 10px; line-height: 14px; padding: 2px 5px; display: inline-block;" href="https://www.sovenco.com">Upgrade to sovenco plus</a>');
             $( '#accordion-section-sovenco_order_styling > .accordion-section-title').append( '<span class="sovenco-notice">Plus</span>' );
         }
     }
