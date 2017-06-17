@@ -462,7 +462,7 @@ function sovenco_customize_register( $wp_customize ) {
                         'live_title_id' => 'network', // apply for unput text and textarea only
                         'title_format'  => esc_html__('[live_title]', 'sovenco'), // [live_title]
                         'max_item'      => 5, // Maximum item can add
-                        'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
+                        'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
                         'fields'    => array(
                             'network'  => array(
                                 'title' => esc_html__('Social network', 'sovenco'),
@@ -536,7 +536,7 @@ function sovenco_customize_register( $wp_customize ) {
 				array(
 					'label'       => esc_html__('MailChimp Action URL', 'sovenco'),
 					'section'     => 'sovenco_newsletter',
-					'description' => __( 'The newsletter form use MailChimp, please follow <a target="_blank" href="http://goo.gl/uRVIst">this guide</a> to know how to get MailChimp Action URL. Example <i>//famethemes.us8.list-manage.com/subscribe/post?u=521c400d049a59a4b9c0550c2&amp;id=83187e0006</i>', 'sovenco' )
+					'description' => __( 'The newsletter form use MailChimp, please follow <a target="_blank" href="http://goo.gl/uRVIst">this guide</a> to know how to get MailChimp Action URL. Example <i>//mailchimp.com', 'sovenco' )
 				)
 			);
 
@@ -598,7 +598,7 @@ function sovenco_customize_register( $wp_customize ) {
 				'section'     => 'sovenco_news_settings',
 				'type'        => 'custom_message',
 				'section'     => 'sovenco_order_styling',
-				'description' => wp_kses_post( 'Check out <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus version</a> for full control over <strong>section order</strong> and <strong>section styling</strong>! ', 'sovenco' )
+				'description' => wp_kses_post( 'Check out <a target="_blank" href="https://www.sovenco.com">sovenco Plus version</a> for full control over <strong>section order</strong> and <strong>section styling</strong>! ', 'sovenco' )
 			)
 		));
 
@@ -898,7 +898,7 @@ function sovenco_customize_register( $wp_customize ) {
 				array(
 					'section'     => 'sovenco_hero_images',
 					'type'        => 'custom_message',
-					'description' => wp_kses_post( 'Want to add <strong>background video</strong> for hero section? Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> version.', 'sovenco' ),
+					'description' => wp_kses_post( 'Want to add <strong>background video</strong> for hero section? Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> version.', 'sovenco' ),
 					'priority'    => 131,
 				)
 			));
@@ -1662,7 +1662,7 @@ function sovenco_customize_register( $wp_customize ) {
 						'live_title_id' => 'content_page', // apply for unput text and textarea only
 						'title_format'  => esc_html__('[live_title]', 'sovenco'), // [live_title]
 						'max_item'      => 3, // Maximum item can add
-                        'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
+                        'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
 						//'allow_unlimited' => false, // Maximum item can add
 
 						'fields'    => array(
@@ -1858,7 +1858,7 @@ function sovenco_customize_register( $wp_customize ) {
                 'live_title_id' => 'title', // apply for unput text and textarea only
                 'title_format'  => esc_html__('[live_title]', 'sovenco'), // [live_title]
                 'max_item'      => 4, // Maximum item can add
-                'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
+                'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
                 'fields'    => array(
                     'title'  => array(
                         'title' => esc_html__('Title', 'sovenco'),
@@ -2071,7 +2071,7 @@ function sovenco_customize_register( $wp_customize ) {
 					'live_title_id' => 'content_page', // apply for unput text and textarea only
 					'title_format'  => esc_html__('[live_title]', 'sovenco'), // [live_title]
 					'max_item'      => 4, // Maximum item can add
-                    'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
+                    'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
 
 					'fields'    => array(
 						'icon_type'  => array(
@@ -2235,7 +2235,7 @@ function sovenco_customize_register( $wp_customize ) {
 					'live_title_id' => 'title', // apply for unput text and textarea only
 					'title_format'  => esc_html__('[live_title]', 'sovenco'), // [live_title]
 					'max_item'      => 4, // Maximum item can add
-                    'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
+                    'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
                     'fields'    => array(
 						'title' => array(
 							'title' => esc_html__('Title', 'sovenco'),
@@ -2413,7 +2413,7 @@ function sovenco_customize_register( $wp_customize ) {
 					//'live_title_id' => 'user_id', // apply for unput text and textarea only
 					'title_format'  => esc_html__( '[live_title]', 'sovenco'), // [live_title]
 					'max_item'      => 4, // Maximum item can add
-                    'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.famethemes.com/plugins/sovenco-plus/?utm_source=theme_customizer&utm_medium=text_link&utm_campaign=sovenco_customizer#get-started">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
+                    'limited_msg' 	=> wp_kses_post( 'Upgrade to <a target="_blank" href="https://www.sovenco.com">sovenco Plus</a> to be able to add more items and unlock other premium features!', 'sovenco' ),
                     'fields'    => array(
 						'user_id' => array(
 							'title' => esc_html__('User media', 'sovenco'),
