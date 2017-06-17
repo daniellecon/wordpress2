@@ -322,7 +322,7 @@ function sovenco_theme_info_page() {
     <div class="wrap about-wrap theme_info_wrapper">
         <h1><?php printf(esc_html__('Welcome to sovenco - Version %1s', 'sovenco'), $theme_data->Version ); ?></h1>
         <div class="about-text"><?php esc_html_e( 'sovenco is a creative and flexible WordPress ONE PAGE theme well suited for business, portfolio, digital agency, product showcase, freelancers websites.', 'sovenco' ); ?></div>
-        <a target="_blank" href="<?php echo esc_url('http://www.famethemes.com/?utm_source=theme_dashboard_page&utm_medium=badge_link&utm_campaign=theme_admin'); ?>" class="famethemes-badge wp-badge"><span>FameThemes</span></a>
+        <a target="_blank" href="<?php echo esc_url('http://www.sovenco.com'); ?>" class="sovencothemes-badge wp-badge"><span>sovencoThemes</span></a>
         <h2 class="nav-tab-wrapper">
             <a href="?page=ft_sovenco" class="nav-tab<?php echo is_null($tab) ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'sovenco', 'sovenco' ) ?></a>
             <a href="?page=ft_sovenco&tab=actions_required" class="nav-tab<?php echo $tab == 'actions_required' ? ' nav-tab-active' : null; ?>"><?php esc_html_e( 'Actions Required', 'sovenco' ); echo ( $number_action > 0 ) ? "<span class='theme-action-count'>{$number_action}</span>" : ''; ?></a>
@@ -346,7 +346,7 @@ function sovenco_theme_info_page() {
                             <h3><?php esc_html_e( 'Theme Documentation', 'sovenco' ); ?></h3>
                             <p class="about"><?php printf(esc_html__('Need any help to setup and configure %s? Please have a look at our documentations instructions.', 'sovenco'), $theme_data->Name); ?></p>
                             <p>
-                                <a href="<?php echo esc_url( 'http://docs.famethemes.com/category/42-sovenco' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('sovenco Documentation', 'sovenco'); ?></a>
+                                <a href="<?php echo esc_url( 'http://docs.sovenco.com' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('sovenco Documentation', 'sovenco'); ?></a>
                             </p>
                             <?php do_action( 'sovenco_dashboard_theme_links' ); ?>
                         </div>
@@ -535,7 +535,7 @@ function sovenco_theme_info_page() {
                         printf( esc_html__(
                             '%1$s you will need to install and activate the %2$s plugin first.', 'sovenco' ),
                             '<b>'.esc_html__( 'Hey.', 'sovenco' ).'</b>',
-                            '<a class="thickbox open-plugin-details-modal" href="'.esc_url( $detail_link ).'">'.esc_html__( 'FameThemes Demo Importer', 'sovenco' ).'</a>'
+                            '<a class="thickbox open-plugin-details-modal" href="'.esc_url( $detail_link ).'">'.esc_html__( 'sovencoThemes Demo Importer', 'sovenco' ).'</a>'
                         );
                         echo '</p>';
 
